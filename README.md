@@ -68,3 +68,4 @@ O serviço de emergência imediatamente para o TurtleBOT (caso esteja em movimen
 
 A seguir eu demonstro o pacote em funcionamento, controlando o TurtleBOT no simulador `webots` usando o teclado e chamando o serviço de emergência:
 
+[PonderadaROS2.webm](https://github.com/GustavoWidman/PonderadaROS2/assets/123963822/854a1bcb-815d-46c2-a50e-e65101306cde)
