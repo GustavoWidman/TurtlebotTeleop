@@ -1,4 +1,4 @@
-# PonderadaROS2 - Gustavo Wagon Widman
+# TurtlebotTeleop - Gustavo Wagon Widman
 
 ## Descrição
 
@@ -27,13 +27,13 @@ Lista de dependências de Python:
 Para instalar o pacote, basta clonar o repositório:
 
 ```bash
-git clone https://github.com/GustavoWidman/PonderadaROS2.git
+git clone https://github.com/GustavoWidman/TurtlebotTeleop.git
 ```
 
 E, em seguida, rodar o script de instalação e execução:
 
 ```bash
-cd PonderadaROS2
+cd TurtlebotTeleop
 chmod +x run.sh # averiguar se é necessário
 ./run.sh
 ```
@@ -49,7 +49,7 @@ Agora pronto! O TurtleBOT está pronto para ser controlado. Para controlar o Tur
 
 ## Instalação Manual
 
-Caso prefira instalar manualmente, siga os seguintes passos, começando na pasta `PonderadaROS2` (base do repositório):
+Caso prefira instalar manualmente, siga os seguintes passos, começando na pasta `TurtlebotTeleop` (base do repositório):
 
 1. Crie um ambiente virtual Python:
 
@@ -111,4 +111,4 @@ ros2 run ros_turtlebot_teleop emergency
 
 A seguir eu demonstro o pacote em funcionamento, controlando o TurtleBOT no simulador `webots` usando o teclado e chamando o serviço de emergência:
 
-[PonderadaROS2.webm](https://github.com/GustavoWidman/PonderadaROS2/assets/123963822/854a1bcb-815d-46c2-a50e-e65101306cde)
+[TurtlebotTeleop.webm](https://github.com/GustavoWidman/TurtlebotTeleop/assets/123963822/854a1bcb-815d-46c2-a50e-e65101306cde)
