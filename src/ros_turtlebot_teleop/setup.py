@@ -21,6 +21,7 @@ setup(
     entry_points={
         'console_scripts': [
 			'main = ros_turtlebot_teleop.main:main',
+			'emergency = ros_turtlebot_teleop.emergency:main'
         ],
     },
 )

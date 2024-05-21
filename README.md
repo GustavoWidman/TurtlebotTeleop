@@ -47,15 +47,52 @@ chmod +x simulator.sh # averiguar se é necessário
 
 Agora pronto! O TurtleBOT está pronto para ser controlado. Para controlar o TurtleBOT, basta seguir as instruções que aparecerão no terminal. O TurtleBOT pode ser controlado pelas teclas WASD ou pelas setas do teclado. A barra de espaço serve para parar o TurtleBOT e a tecla "Q" serve como parada de emergência, imediatamente parando o TurtleBOT e encerrando o programa.
 
+## Instalação Manual
+
+Caso prefira instalar manualmente, siga os seguintes passos, começando na pasta `PonderadaROS2` (base do repositório):
+
+1. Crie um ambiente virtual Python:
+
+```bash
+python3 -m venv venv
+source venv/bin/activate
+```
+
+2. Instale as dependências de Python:
+
+```bash
+pip install -r requirements.txt
+```
+
+3. Localize e adicione o seu venv ao ROS2:
+
+```bash
+export PYTHONPATH="$PYTHONPATH:$(pip show setuptools | grep "Location: " | awk '{print $2}')"
+```
+
+4. Compile o pacote:
+
+```bash
+cd src
+colcon build
+```
+
+5. Rode o pacote desejado:
+
+```bash
+ros2 run ros_turtlebot_teleop main # para rodar o pacote de teleoperação
+ros2 run ros_turtlebot_teleop emergency # para rodar o pacote de emergência (opcional)
+```
+
 ## Serviço de Emergência
 
-O pacote inclui um serviço de emergência que pode ser chamado a qualquer momento. Para chamar o serviço de emergência, basta rodar o seguinte comando:
+O pacote `main` inclui um serviço de emergência que pode ser chamado a qualquer momento. Para chamar o serviço de emergência, basta rodar o seguinte comando:
 
 ```bash
 ros2 service call /emergency_stop_teleop std_srvs/srv/Empty
 ```
 
-Ou rodar o script `emergency.sh`:
+Ou rodar o script `emergency.sh`, que chama o pacote `emergency`:
 
 ```bash
 chmod +x emergency.sh # averiguar se é necessário
@@ -63,6 +100,12 @@ chmod +x emergency.sh # averiguar se é necessário
 ```
 
 O serviço de emergência imediatamente para o TurtleBOT (caso esteja em movimento) e encerra o programa (caso esteja rodando). O serviço de emergência é uma maneira segura de parar o TurtleBOT em caso de emergência.
+
+Note que também é possível chamar o serviço de emergência pelo pacote desenvolvido `emergency`. Para chamar o serviço de emergência pelo pacote `emergency`, consulte a seção "Instalação Manual" e rode o pacote `emergency`:
+
+```bash
+ros2 run ros_turtlebot_teleop emergency
+```
 
 ## Demonstração
 
